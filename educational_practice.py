@@ -26,6 +26,7 @@ def print_table(struct_list):
     print(table)
 
 def search_table(struct_list):
+    print("Write key for search")
     key = input()
     fined_elements_arr = []
     for i in  struct_list:
