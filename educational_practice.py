@@ -22,7 +22,8 @@ def print_table(struct_list):
         table.add_row([i["Name"], i["Market_cap"], i["Price"]])
     print(table)
 
-def search_table(struct_list, key):
+def search_table(struct_list):
+    key = input()
     fined_elements_arr = []
     for i in  struct_list:
         if i["Name"] == key:
@@ -30,13 +31,28 @@ def search_table(struct_list, key):
 
     return fined_elements_arr
 
+def parse_site():
+    tmp_struct_list = []
+
 def main():
-    struct_list = fill_struct_list()
-    print_table(struct_list)
-
-    key = input()
-
-    print_table(search_table(struct_list, key))
+    print("Write programm mode:",
+          "1 - Read from file.",
+          "2 - Read from site.",
+          "e - Exit", sep='\n')
+    while True:
+        input_key = input()
+        if input_key in ['1', '2', 'e']:
+            if input_key == 'e':
+                break;
+            elif input_key == '1':
+                exit_flag = 0
+                struct_list = fill_struct_list()
+                print_table(struct_list)
+                print_table(search_table(struct_list))
+            elif input_key == '2':
+                pass
+        else:
+            print("Unvalid input.")
 
 if __name__ == "__main__":
     main()
