@@ -1,1 +1,1 @@
-# -Educational-practice
+# Educational-practice
